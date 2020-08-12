@@ -1,15 +1,322 @@
-<!doctype html>
+
+<!DOCTYPE html>
 <html>
 <head>
+<title>ckncoins</title>
 <style>
-	body {
-		font-family: "Courier"
-	}	
+@charset "utf-8";
+/* CSS Document */
+html {
+  scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+body {
+  margin: 0;
+  font-size: 28px;
+  background-color: black;
+  font-family: Arial, Helvetica, sans-serif;
+	overflow: visible;
+}
+.white-mode {
+  background-color: white;
+  color: black;
+  overflow: visible;
+}
+.button {border-radius: 8px;}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+	
+}
+.button {
+  background-color: #4CAF50; /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+#navbar {
+  overflow: hidden;
+  background-color: #0066ff;
+  position: -webkit-sticky;	
+  position: sticky;
+  top: 0;	
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #0000cc;
+  color: #ffffff;
+}
+
+#navbar a.active {
+  background-color: #0000ff;
+  color: white;
+}
+
+.content {
+  padding: 16px;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
+form {
+  border: 3px solid #f1f1f1;
+}
+
+.button {
+  position: relative;
+  background-color: #4CAF50;
+  border: none;
+  font-size: 28px;
+  color: #FFFFFF;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #90EE90;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
+.button4 {border-radius: 12px;}
+
+hr.rounded {
+  border-top: 8px solid #bbb;
+  border-radius: 5px;
+}
+button.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0
+}
+
+/* Float cancel and delete buttons and add an equal width */
+.cancelbtn, .deletebtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add a color to the cancel button */
+.cancelbtn {
+  background-color: #ccc;
+  color: black;
+}
+
+/* Add a color to the delete button */
+.deletebtn {
+  background-color: #f44336;
+}
+
+/* Add padding and center-align text to the container */
+.container {
+  padding: 16px;
+  text-align: center;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: #474e5d;
+  padding-top: 50px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #000000;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* Style the horizontal ruler */
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+ 
+/* The Modal Close Button (x) */
+.close {
+  position: absolute;
+  right: 35px;
+  top: 15px;
+  font-size: 40px;
+  font-weight: bold;
+  color: #f1f1f1;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  cursor: pointer;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and delete button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .deletebtn {
+     width: 100%;
+  }
+}
+
 </style>
-<meta charset="utf-8">
-<title>ch1ck3n's homepage</title>
+<link rel="stylesheet" type="text/css" href="https://ch1ck3n.com/ch1ck3nCSS.css" />
 </head>
 <body>
-	<h1>Page under development</h1>
-</body>
-</html>
+
+<! navbar !>
+<div id="navbar">
+  <a class="active" href="https://ch1ck3n.com/">Home</a>
+  <a href="#about">about</a> 
+	<a href="#redeem">Claim coins</a>
+    <a href="#buy">Buy coins</a>
+	
+</div>
+
+<! About !>
+<center>
+<h3 id="about">What is ckncoins?</h3>
+<p>Ckncoins is the currency used for ch1ck3n.com, so it's like dogecoin, if you knew what dogecoin was, it's like bitcoin. if you don't know what dogecoin is, it's like bitcoin. Also, there will be another type of currency. Coming soon! </p>
+<hr class="rounded">
+
+<! claim !>
+<h3 id="redeem">redeem ckncoins</h3>
+<h4>If you currently have a badge, or something else, you can redeem it by clicking this button.</h4>
+<button class="button button4 sticky" onclick="check()"> Claim coins </button>
+<h3 class="sucess"></h3>
+
+<hr class="rounded">
+
+<h1>You have </h1>
+<h1 class="howmany"></h1>
+<h1> Coins.</h1>
+if number doesn't show up, click <a onclick="reset()">here</a>
+<hr class="rounded">
+
+<h3 id="buy">buy ckncoins.</h3>
+<h5>1 CKNURRENCIES = 10 ckncoins</h5>
+
+<h4>Buy <strong>100</strong> ckncoin for 10 CKNURRENCIES</h4>
+<button class="button button4" onclick="document.getElementById('id01').style.display='block'">Buy 100 ckncoin</button>
+<div id="id01" class="modal">
+  <form class="modal-content" action="/action_page.php">
+    <div class="container">
+      <h1>Buy coins</h1>
+      <p>Are you sure you want to buy 100 coins?</p>
+    
+      <div class="clearfix">
+        <button type="button" onclick="document.getElementById('id01').style.display='none'" class="button button4">Cancel</button>
+        <button type="button" onclick="Buy100()" class="button button4">I'm sure</button>
+      </div>
+    </div>
+  </form>
+</div>
+
+
+</center>
+<script>
+document.querySelector(".howmany").innerHTML = localStorage.getItem("Coins")
+function check() {
+ if (localStorage.getItem("basicbadge") === "yes") {
+     document.querySelector(".sucess").innerHTML = "Succesfully claimed 300 coins!";
+     var rightnowcoins = localStorage.getItem("Coins")
+     var rightnowcoins = number(rightnowcoins)
+     var newcoins = rightnowcoins + 300
+     localStorage.setItem("Coins" , newcoins)
+     localStorage.setItem("basicbadge" , "no")
+     document.querySelector(".howmany").innerHTML = localStorage.getItem("Coins")
+ } else {
+     document.querySelector(".sucess").innerHTML = "You don't have anything to redeem.";
+     document.querySelector(".howmany").innerHTML = localStorage.getItem("Coins")
+ }
+}
+
+</script>
+
+<script>
+if (localStorage.getItem("hdjfghergwhher") == undefined) {
+    alert("undefined")
+    localStorage.setItem("ckn" , 0)
+}
+// Get the modal
+var modal = document.getElementById('id01');
+â€‹
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+function Buy100() {
+   if (localStorage.getItem("ckn") > 10) {
+      alert("succesfully bought 100 ckncoins!")
+      document.getElementById('id01').style.display='none'
+   } else {
+       alert("You don't have enough CKNURRENCIES.")
+       document.getElementById('id01').style.display='none'
+   }
+}
+</script>
+</body>    
+    
+ </html>
